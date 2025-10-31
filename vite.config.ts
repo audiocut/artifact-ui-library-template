@@ -1,12 +1,13 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
+import dts from 'vite-plugin-dts'
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react()],
+  plugins: [react(), dts()],
   build: {
     lib: {
-      entry: 'src/index.ts', // Replace with your library's entry file
+      entry: 'src/index.tsx', // Replace with your library's entry file
       name: 'MyUILibrary', // Global name for UMD builds
       fileName: (format) => `my-ui-library.${format}.js`, // Output file names
       formats: ['es', 'umd'], // Build ES modules and UMD
@@ -20,5 +21,6 @@ export default defineConfig({
         },
       },
     },
+    cssCodeSplit: false, // Bundle CSS into the library
   },
 })

@@ -1,73 +1,60 @@
-# React + TypeScript + Vite
+# UI Library Template
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React UI library template built with TypeScript, Vite, and Tailwind CSS. This template packages Tailwind CSS with the library, so consumers don't need to install Tailwind separately.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- ⚡ Built with Vite for fast development and optimized builds
+- 🎨 Tailwind CSS included and packaged with the library
+- 📦 Library build outputs ES modules and UMD formats
+- 🔧 TypeScript support with type definitions
+- 🧩 Modular component structure
 
-## React Compiler
+## Installation
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install lib-template
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Usage
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Import the components and the CSS:
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```tsx
+import { RootComponent } from 'lib-template';
+import 'lib-template/dist/lib-template.css';
+
+// Use the components
+<RootComponent name="c1" />
+```
+
+## Development
+
+```bash
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+# Build the library
+npm run build
+
+# Preview the build
+npm run preview
+```
+
+## Components
+
+- `RootComponent`: Main component that renders C1 or C2 based on the `name` prop
+- `C1`: Component 1
+- `C2`: Component 2
+
+## Build Output
+
+The library builds to the `dist/` directory with:
+- `my-ui-library.es.js` - ES module
+- `my-ui-library.umd.js` - UMD module
+- `lib-template.css` - Compiled Tailwind CSS
+- `index.d.ts` - TypeScript definitions
 ```
