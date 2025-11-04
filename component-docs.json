@@ -1,0 +1,26 @@
+{
+  "generatedAt": "2025-11-04T13:37:59.700Z",
+  "componentsCount": 2,
+  "components": [
+    {
+      "filePath": "src/components/C1.tsx",
+      "componentName": "C1",
+      "description": "MobileFrame - Renders a mobile device frame with status bar and home indicator Displays content in a mobile-sized viewport (320×640px)",
+      "exports": [
+        "C1"
+      ],
+      "dependencies": [],
+      "props": []
+    },
+    {
+      "filePath": "src/components/C2.tsx",
+      "componentName": "C2",
+      "description": "",
+      "exports": [
+        "C2"
+      ],
+      "dependencies": [],
+      "props": []
+    }
+  ]
+}

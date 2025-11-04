@@ -1,3 +1,7 @@
+/**
+ * MobileFrame - Renders a mobile device frame with status bar and home indicator
+ * Displays content in a mobile-sized viewport (320×640px)
+ */
 const C1 = () => {
   return (
     <div
